@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Per Evelyn ❤</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+
+        h1 {
+            position: relative;
+            z-index: 2;
+            font-size: 3em;
+            text-align: center;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: 0; /* partono dal basso */
+            font-size: 20px;
+            animation: rise 5s linear infinite;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Ti amo, Evelyn ❤</h1>
+
+    <script>
+        const numberOfHearts = 30;
+
+        for (let i = 0; i < numberOfHearts; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerText = "❤"; // emoji cuore
+
+            // posizione casuale orizzontale
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+
+            // dimensione casuale
+            const size = Math.random() * 30 + 20;
+            heart.style.fontSize = size + 'px';
+
+            // ritardo casuale
+            heart.style.animationDelay = Math.random() * 5 + 's';
+
+            document.body.appendChild(heart);
+        }
+    </script>
+</body>
+</html>
